@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for you 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #2b0d17, #5c1d2f, #8b2f49);
+            overflow: hidden;
+            font-family: "Georgia", serif;
+        }
+
+        .poem-box {
+            width: 85%;
+            max-width: 700px;
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,.35);
+
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s;
+        }
+
+        .poem-box.show{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        h1{
+            font-size:2.5rem;
+            margin-bottom:25px;
+            color:#ffd6df;
+        }
+
+        p{
+            line-height:2;
+            font-size:1.1rem;
+            white-space:pre-line;
+        }
+
+        .next-btn{
+            margin-top:35px;
+            padding:14px 35px;
+            border:none;
+            border-radius:30px;
+            background:#800020;
+            color:white;
+            cursor:pointer;
+            font-size:16px;
+            transition:.3s;
+        }
+
+        .next-btn:hover{
+            background:#a00028;
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="poem-box" id="poemBox">
+
+<h1>a poem for you</h1>
+
+<p id="poemText"></p>
+
+<button class="next-btn" onclick="location.href='memories.html'">
+our memories →
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
