@@ -44,7 +44,7 @@ const reasons = [
   'You make memories feel golden.',
   'Your heart is rare.',
   'You are my favorite person to annoy.',
-  'You glow without trying.',
+  'You are aura farming without trying lol.',
   'You make everything better.',
   'You listen like home.',
   'You are effortlessly classy.',
@@ -95,7 +95,7 @@ const reasons = [
   'You are a beautiful chapter.',
   'You make every corner feel like home.',
   'You are cute without even trying.',
-  'You have the prettiest heart.',
+  'You have the purest heart.',
   'You make people feel noticed.',
   'You bring sparkle into simple things.',
   'You are love in human form.',
@@ -126,13 +126,13 @@ const reasons = [
   'You are always worth celebrating.',
   'You make kindness look beautiful.',
   'You are a blessing in soft colors.',
-  'You make every page of life prettier.',
+  'You make every page of life beautiful.',
   'You are deeply loved.',
   'You make my heart smile.',
   'You deserve all the magic.',
   'You make today feel golden.',
   'You are unforgettable.',
-  'You are my favorite birthday girl.',
+  'You are my favorite birthday boy.',
   'You are more loved than 100 reasons can say.'
 ];
 
