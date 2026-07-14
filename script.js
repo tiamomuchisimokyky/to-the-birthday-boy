@@ -248,11 +248,11 @@ cutCakeBtn?.addEventListener('click', async () => {
   }
 });
 
-// ===== Poem Typewriter =====
-const poemBtn = $('#poemBtn');
-const poem = $('#poem');
+// =======================
+// Poem Typing Animation
+// =======================
 
-const poemText = `whilom,
+const poem = `whilom,
 
 i found no reason
 to believe
@@ -327,30 +327,26 @@ that separates us,
 for none
 could ever alter
 the quiet certainty
+
 that my heart
 was always
 meant for you.`;
 
-let poemTyped = false;
+const poemText = document.getElementById("poemText");
+const poemBox = document.getElementById("poemBox");
 
-if (poemBtn && poem) {
-  poem.style.whiteSpace = 'pre-line';
-  poem.textContent = '';
+if (poemText && poemBox) {
+    poemBox.classList.add("show");
 
-  poemBtn.addEventListener('click', () => {
-    if (poemTyped) return;
-
-    poemTyped = true;
     let i = 0;
 
-    const typing = setInterval(() => {
-      poem.textContent += poemText[i] || '';
-      i++;
+    function typePoem() {
+        if (i < poem.length) {
+            poemText.textContent += poem.charAt(i);
+            i++;
+            setTimeout(typePoem, 35);
+        }
+    }
 
-      if (i > poemText.length) {
-        clearInterval(typing);
-        poemBtn.style.display = 'none';
-      }
-    }, 35);
-  });
+    setTimeout(typePoem, 600);
 }
