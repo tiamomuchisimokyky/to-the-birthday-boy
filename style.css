@@ -1404,12 +1404,11 @@ footer,
     margin-top:30px;
     padding:35px;
 
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.15);
+    background:#f8f1e7; /* parchment paper */
     border-radius:20px;
 
-    color:white;
+    color:#5C4033;      /* warm brown text */
+
     font-family:"Cormorant Garamond", serif;
     font-size:1.3rem;
     line-height:2;
