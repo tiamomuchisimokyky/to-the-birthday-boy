@@ -248,12 +248,12 @@ cutCakeBtn?.addEventListener('click', async () => {
   }
 });
 
-// =======================
-// Poem Typing Animation
-// =======================
 
-const poem = `whilom,
+// ===== Poem Typewriter =====
+const poemBtn = $('#poemBtn');
+const poem = $('#poem');
 
+const poemText = `whilom,
 i found no reason
 to believe
 that love
@@ -330,23 +330,28 @@ the quiet certainty
 
 that my heart
 was always
-meant for you.`;
+meant for you.`; 
 
-const poemText = document.getElementById("poemText");
-const poemBox = document.getElementById("poemBox");
+let poemTyped = false;
 
-if (poemText && poemBox) {
-    poemBox.classList.add("show");
+if (poemBtn && poem) {
+  poem.style.whiteSpace = 'pre-line';
+  poem.textContent = '';
 
+  poemBtn.addEventListener('click', () => {
+    if (poemTyped) return;
+
+    poemTyped = true;
     let i = 0;
 
-    function typePoem() {
-        if (i < poem.length) {
-            poemText.textContent += poem.charAt(i);
-            i++;
-            setTimeout(typePoem, 35);
-        }
-    }
+    const typing = setInterval(() => {
+      poem.textContent += poemText[i] || '';
+      i++;
 
-    setTimeout(typePoem, 600);
+      if (i > poemText.length) {
+        clearInterval(typing);
+        poemBtn.style.display = 'none';
+      }
+    }, 35);
+  });
 }
