@@ -1365,3 +1365,24 @@ footer,
     transition-duration: 0.001ms !important;
   }
 }
+
+.poem-section{
+    display:flex;
+    justify-content:center;
+    padding:40px 20px 100px;
+}
+
+.poem-card{
+    max-width:750px;
+    width:100%;
+    padding:50px;
+    border-radius:24px;
+}
+
+.poem-text{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.6rem;
+    line-height:2;
+    white-space:pre-line;
+    text-align:center;
+}
