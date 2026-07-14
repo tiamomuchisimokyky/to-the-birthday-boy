@@ -250,10 +250,13 @@ cutCakeBtn?.addEventListener('click', async () => {
 
 
 // ===== Poem Typewriter =====
-const poemBtn = $('#poemBtn');
-const poem = $('#poem');
+
+const poemBtn = document.getElementById("poemBtn");
+const poem = document.getElementById("poem");
+const nextBtn = document.getElementById("nextBtn");
 
 const poemText = `whilom,
+
 i found no reason
 to believe
 that love
@@ -330,28 +333,53 @@ the quiet certainty
 
 that my heart
 was always
-meant for you.`; 
+meant for you.`;
 
 let poemTyped = false;
 
 if (poemBtn && poem) {
-  poem.style.whiteSpace = 'pre-line';
-  poem.textContent = '';
 
-  poemBtn.addEventListener('click', () => {
-    if (poemTyped) return;
+    poem.style.display = "none";
+    poem.style.whiteSpace = "pre-line";
 
-    poemTyped = true;
-    let i = 0;
+    if (nextBtn) {
+        nextBtn.style.display = "none";
+    }
 
-    const typing = setInterval(() => {
-      poem.textContent += poemText[i] || '';
-      i++;
+    poemBtn.addEventListener("click", () => {
 
-      if (i > poemText.length) {
-        clearInterval(typing);
-        poemBtn.style.display = 'none';
-      }
-    }, 35);
-  });
+        if (poemTyped) return;
+
+        poemTyped = true;
+
+        // Hide button
+        poemBtn.style.display = "none";
+
+        // Show poem
+        poem.style.display = "block";
+        poem.textContent = "";
+
+        let i = 0;
+
+        function typeWriter() {
+
+            if (i < poemText.length) {
+
+                poem.textContent += poemText.charAt(i);
+                i++;
+
+                setTimeout(typeWriter, 35);
+
+            } else if (nextBtn) {
+
+                nextBtn.style.display = "inline-block";
+
+            }
+
+        }
+
+        typeWriter();
+
+    });
+
 }
